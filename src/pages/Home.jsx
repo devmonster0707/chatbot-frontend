@@ -46,16 +46,6 @@ function Home() {
     fetchMessages();
     setChatId(uuidv4());
     // Cleanup function (optional)
-    return async () => {
-      // Cleanup code, such as cancelling subscriptions or clearing timers, goes here
-      await fetch(`${baseURL}/?sessionId=${chatId}`, {
-        method: "DELETE",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-    };
   }, []);
 
   const handleKeyDown = (e) => {
